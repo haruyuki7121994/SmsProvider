@@ -4,7 +4,7 @@ Dependencies: Freemarker, Validation, Web, Lombok
 
 
 Api:<br>
-/api/send: send message to client side for processing<br>
+/api/send: send message to server side for processing<br>
 Body Example: {"phone":"0383738329","content":"hello","type":"VMGS"}
 
 Solution:<br>
