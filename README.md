@@ -13,4 +13,4 @@ Use Strategy Pattern<br>
 +Strategy: SendingMethod<br>
 +ConcreteStrategy: <ProviderName>SendingMethod<br>
 
-Use java reflection to initialize the corresponding instance provider method (method createSendingMethod(String type) in SmsSender)
+SmsServiceHandler: get a list of services that send sms
