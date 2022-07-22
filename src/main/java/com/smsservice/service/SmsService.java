@@ -1,6 +1,7 @@
 package com.smsservice.service;
 
 import com.smsservice.component.SendingMethod;
+import com.smsservice.component.SmsServiceHandler;
 import com.smsservice.component.SmsSender;
 import com.smsservice.model.MessageResponse;
 import com.smsservice.model.Sms;
@@ -13,8 +14,9 @@ import org.springframework.web.server.ResponseStatusException;
 @AllArgsConstructor
 public class SmsService {
     private final SmsSender smsSender;
+    private final SmsServiceHandler smsServiceHandler;
     public MessageResponse sendSmsProvider(Sms sms) {
-        SendingMethod sendingMethod = smsSender.createSendingMethod(sms.getType());
+        SendingMethod sendingMethod = smsServiceHandler.getService(sms.getType());
         if (sendingMethod == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
